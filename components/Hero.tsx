@@ -46,7 +46,7 @@ export default function Hero() {
           </div>
 
           <p className="font-mono text-[#3a6080] text-sm leading-relaxed mb-8 max-w-lg animate-[fadeInUp_0.8s_ease_0.4s_both]">
-            Diseño y construyo sistemas backend de alto rendimiento, APIs robustas y arquitecturas escalables. Más de{" "}
+            Me enfoco en construir sistemas backend que impactan directamente en el negocio, mejorando performance, escalabilidad y costos. Más de{" "}
             <span className="text-[#c8dde8]">2 años</span> transformando lógica compleja en soluciones confiables.
           </p>
 

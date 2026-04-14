@@ -9,6 +9,8 @@ interface Project {
   color: "neon" | "cyan";
   wide?: boolean;
   icon: ReactNode;
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 const GitIcon = () => (
@@ -23,6 +25,11 @@ const ExternalIcon = () => (
   </svg>
 );
 
+// ─────────────────────────────────────────────────────────────────
+// EDITA AQUÍ: agrega githubUrl y/o liveUrl a cada proyecto.
+// Si un proyecto no tiene link, simplemente no pongas el campo
+// (o déjalo como "") y el ícono aparecerá deshabilitado.
+// ─────────────────────────────────────────────────────────────────
 const PROJECTS: Project[] = [
   // {
   //   title: "PayFlow API Gateway",
@@ -30,7 +37,13 @@ const PROJECTS: Project[] = [
   //   desc: "Gateway de pagos de alta disponibilidad procesando +500k transacciones diarias. Arquitectura de microservicios con circuit breakers y rate limiting avanzado.",
   //   tags: ["Node.js", "Redis", "PostgreSQL", "Docker"],
   //   color: "neon",
-  //   icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M12 5l7 7-7 7"/></svg>,
+  //   githubUrl: "", // ej: "https://github.com/alvaro-espinozagarate/payflow-api"
+  //   liveUrl: "",   // ej: "https://payflow.tudominio.com"
+  //   icon: (
+  //     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 12h14M12 5l7 7-7 7" />
+  //     </svg>
+  //   ),
   // },
   // {
   //   title: "DataSync Platform",
@@ -38,7 +51,13 @@ const PROJECTS: Project[] = [
   //   desc: "Plataforma de sincronización en tiempo real para datos distribuidos. Event sourcing con Kafka, reducción del 70% en latencia de datos críticos.",
   //   tags: ["Python", "Kafka", "MongoDB", "gRPC"],
   //   color: "cyan",
-  //   icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>,
+  //   githubUrl: "", // ej: "https://github.com/alvaro-espinozagarate/datasync"
+  //   liveUrl: "",
+  //   icon: (
+  //     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+  //     </svg>
+  //   ),
   // },
   // {
   //   title: "AuthShield Service",
@@ -46,12 +65,18 @@ const PROJECTS: Project[] = [
   //   desc: "Sistema de autenticación y autorización empresarial con OAuth 2.0, JWT, MFA y auditoría completa. Protege +20 microservicios en producción.",
   //   tags: ["Go", "PostgreSQL", "Redis", "JWT"],
   //   color: "neon",
-  //   icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>,
+  //   githubUrl: "", // ej: "https://github.com/alvaro-espinozagarate/authshield"
+  //   liveUrl: "",
+  //   icon: (
+  //     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  //       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+  //     </svg>
+  //   ),
   // },
   {
     title: "SIMAT - UNFV",
     year: "2025",
-    desc: "Sistema de gestión académica para la Universidad Nacional Federico Villarreal. Integración de módulos de matrícula, calificaciones y reportes con una interfaz moderna y responsiva.",
+    desc: "Sistema académico que soporta +10k req/s, reduciendo tiempos de matrícula en un 90% y mejorando la experiencia de estudiantes.",
     tags: ["Django REST Framework", "SQL Server", "Azure DevOps", "Docker", "Windows Server"],
     metrics: [
       { value: "10k+", label: "req/s" },
@@ -60,17 +85,62 @@ const PROJECTS: Project[] = [
     ],
     color: "cyan",
     wide: true,
-    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>,
+    githubUrl: "", // repositorio privado — déjalo vacío si no es público
+    liveUrl: "https://simat.unfv.edu.pe/",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
   },
   {
     title: "Analytics Engine",
     year: "2026",
-    desc: "Motor de analytics en tiempo real con procesamiento de streams, dashboards y alertas automáticas para KPIs de negocio críticos.",
-    tags: ["Python", "Power BI", "Dax"],
+    desc: "Motor de analytics en tiempo real con procesamiento de streams, dashboards y alertas automáticas del clima usando la API de Open Weather.",
+    tags: ["Node.js", "Next.js", "API REST", "WebSockets"],
     color: "neon",
-    icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>,
+    githubUrl: "", // ej: "https://github.com/alvaro-espinozagarate/analytics-engine"
+    liveUrl: "",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    ),
   },
 ];
+
+// Botones de links: si no hay URL, el ícono aparece deshabilitado (opaco)
+function ProjectLinks({ githubUrl, liveUrl }: { githubUrl?: string; liveUrl?: string }) {
+  return (
+    <div className="flex gap-2">
+      {/* GitHub */}
+      {githubUrl ? (
+        <a href={githubUrl} target="_blank" rel="noopener noreferrer"
+          title="Ver en GitHub"
+          className="text-[#3a6080] hover:text-neon transition-colors">
+          <GitIcon />
+        </a>
+      ) : (
+        <span className="text-[#3a6080] opacity-25 cursor-not-allowed" title="Repositorio no disponible">
+          <GitIcon />
+        </span>
+      )}
+
+      {/* Live / Demo */}
+      {liveUrl ? (
+        <a href={liveUrl} target="_blank" rel="noopener noreferrer"
+          title="Ver proyecto en vivo"
+          className="text-[#3a6080] hover:text-[#00e5ff] transition-colors">
+          <ExternalIcon />
+        </a>
+      ) : (
+        <span className="text-[#3a6080] opacity-25 cursor-not-allowed" title="Demo no disponible">
+          <ExternalIcon />
+        </span>
+      )}
+    </div>
+  );
+}
 
 export default function Projects() {
   return (
@@ -87,8 +157,8 @@ export default function Projects() {
               Trabajo <span className="text-neon">destacado</span>
             </h2>
           </div>
-          <a href="#" className="hidden md:flex items-center gap-2 font-mono text-xs text-[#3a6080] hover:text-neon transition-colors border border-[#1a3a52] hover:border-neon/40 px-4 py-2 rounded-sm">
-            Ver todos →
+          <a href="#contact" className="hidden md:flex items-center gap-2 font-mono text-xs text-[#3a6080] hover:text-neon transition-colors border border-[#1a3a52] hover:border-neon/40 px-4 py-2 rounded-sm">
+            Ver Todos →
           </a>
         </div>
 
@@ -99,8 +169,10 @@ export default function Projects() {
               className={`card-hover relative bg-[#0d1e2e] p-6 rounded-sm overflow-hidden${p.wide ? " md:col-span-2" : ""}`}
             >
               <div className="project-accent" />
+
               <div className={`flex ${p.wide ? "flex-col sm:flex-row sm:items-start" : "items-start"} justify-between gap-4 mb-4`}>
                 <div className={`flex ${p.wide ? "items-center gap-4" : "items-start justify-between w-full"}`}>
+                  {/* Icon */}
                   <div
                     className="w-10 h-10 border flex items-center justify-center rounded-sm flex-shrink-0"
                     style={{
@@ -111,6 +183,8 @@ export default function Projects() {
                   >
                     {p.icon}
                   </div>
+
+                  {/* Wide: título inline con el ícono */}
                   {p.wide && (
                     <div>
                       <h3 className="font-display font-bold text-lg text-[#c8dde8]">{p.title}</h3>
@@ -119,22 +193,27 @@ export default function Projects() {
                       </div>
                     </div>
                   )}
+
+                  {/* Normal: links a la derecha del ícono */}
                   {!p.wide && (
-                    <div className="flex gap-2">
-                      <a href="#" className="text-[#3a6080] hover:text-neon transition-colors"><GitIcon /></a>
-                      <a href="#" className="text-[#3a6080] hover:text-[#00e5ff] transition-colors"><ExternalIcon /></a>
-                    </div>
+                    <ProjectLinks githubUrl={p.githubUrl} liveUrl={p.liveUrl} />
                   )}
                 </div>
+
+                {/* Wide: links a la derecha del bloque */}
                 {p.wide && (
-                  <div className="flex gap-2">
-                    <a href="#" className="text-[#3a6080] hover:text-neon transition-colors"><GitIcon /></a>
-                    <a href="#" className="text-[#3a6080] hover:text-[#00e5ff] transition-colors"><ExternalIcon /></a>
-                  </div>
+                  <ProjectLinks githubUrl={p.githubUrl} liveUrl={p.liveUrl} />
                 )}
               </div>
-              {!p.wide && <h3 className="font-display font-bold text-lg text-[#c8dde8] mb-2">{p.title}</h3>}
+
+              {/* Título (solo cards normales) */}
+              {!p.wide && (
+                <h3 className="font-display font-bold text-lg text-[#c8dde8] mb-2">{p.title}</h3>
+              )}
+
               <p className="font-mono text-xs text-[#3a6080] leading-relaxed mb-4 max-w-2xl">{p.desc}</p>
+
+              {/* Métricas */}
               {p.metrics && (
                 <div className="grid grid-cols-3 gap-4 mb-4 max-w-sm">
                   {p.metrics.map((m) => (
@@ -145,6 +224,8 @@ export default function Projects() {
                   ))}
                 </div>
               )}
+
+              {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {p.tags.map((t) => <span key={t} className="tag">{t}</span>)}
               </div>

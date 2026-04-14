@@ -1,11 +1,11 @@
 const EXPERIENCES = [
   {
-    role: "CEO & Lead Backend Engineer",
+    role: "CEO & Founder",
     company: "FAcore Peru",
     period: "2026 — Presente",
     color: "neon",
-    desc: "Lideré el rediseño de la arquitectura backend migrando de monolito a microservicios, logrando un 300% de mejora en throughput y reduciendo costos de infraestructura en 40%.",
-    tags: ["Python", "Node.js", "Django REST Framework", "PostgreSQL", "AWS", "Nginx", "Redis"],
+    desc: "Encargado de la dirección estratégica y desarrollo de soluciones tecnológicas, mejorando la eficiencia y escalabilidad del negocio.",
+    tags: ["Leadership", "Business Strategy", "Software Development", "System Architecture", "Entrepreneurship"],
   },
   {
     role: "Desarrollador de Software | Backend",
