@@ -94,7 +94,7 @@ const PROJECTS: Project[] = [
     ),
   },
   {
-    title: "Real-time Weather Analysis Dashboard",
+    title: "Monitor Climático - Perú",
     year: "2026",
     desc: "Motor de analytics en tiempo real con procesamiento de streams, dashboards y alertas automáticas del clima usando la API de Open Weather.",
     tags: ["TypeScript", "Next.js", "API REST"],
