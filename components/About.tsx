@@ -32,7 +32,7 @@ export default function About() {
                   >
                     <span className="font-display font-extrabold text-5xl text-neon glow-neon">AE</span>
                   </div>
-                  <div className="font-mono text-sm text-[#3a6080]">@alvароespinoza</div>
+                  <div className="font-mono text-sm text-[#3a6080]">@alvаrоespinoza</div>
                 </div>
                 <div className="absolute top-3 left-3 w-6 h-6 border-t-2 border-l-2 border-neon/60" />
                 <div className="absolute top-3 right-3 w-6 h-6 border-t-2 border-r-2 border-neon/60" />
