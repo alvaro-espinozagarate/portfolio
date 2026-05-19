@@ -4,8 +4,8 @@ const EXPERIENCES = [
     company: "FAcore Peru",
     period: "2026 — Presente",
     color: "neon",
-    desc: "Encargado de la dirección estratégica y desarrollo de soluciones tecnológicas, mejorando la eficiencia y escalabilidad del negocio.",
-    tags: ["Leadership", "Business Strategy", "Software Development", "System Architecture", "Entrepreneurship"],
+    desc: "Dirijo la estrategia del negocio y la gestión de proyectos de software end-to-end, coordinando equipos, prioridades y entregas para construir soluciones tecnológicas escalables.",
+    tags: ["Project Management", "Agile / Scrum", "Leadership", "System Architecture", "Entrepreneurship"],
   },
   {
     role: "Desarrollador de Software | Backend",

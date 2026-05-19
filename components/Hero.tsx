@@ -41,12 +41,12 @@ export default function Hero() {
           <div className="flex items-center gap-3 mb-6 animate-[fadeInUp_0.8s_ease_0.4s_both]">
             <div className="w-8 h-px bg-neon/60" />
             <span className="font-space text-[#00e5ff] text-sm tracking-widest uppercase">
-              System Engineer · Backend Engineer
+              System Engineer · Backend Development & Gestión de Proyectos
             </span>
           </div>
 
           <p className="font-mono text-[#3a6080] text-sm leading-relaxed mb-8 max-w-lg animate-[fadeInUp_0.8s_ease_0.4s_both]">
-            Me enfoco en construir sistemas backend que impactan directamente en el negocio, mejorando performance, escalabilidad y costos. Más de{" "}
+            Me enfoco en construir sistemas backend escalables y gestionar proyectos de software de inicio a fin, alineando decisiones técnicas con los objetivos del negocio. Más de{" "}
             <span className="text-[#c8dde8]">2 años</span> transformando lógica compleja en soluciones confiables.
           </p>
 
@@ -98,7 +98,7 @@ export default function Hero() {
             <div className="p-6 font-mono text-sm leading-7">
               <span className="text-[#3a6080]">{"{"}</span><br />
               &nbsp;&nbsp;<span className="text-[#00e5ff]">&quot;name&quot;</span><span className="text-[#3a6080]">:</span> <span className="text-neon">&quot;Alvaro Espinoza Garate&quot;</span><span className="text-[#3a6080]">,</span><br />
-              &nbsp;&nbsp;<span className="text-[#00e5ff]">&quot;role&quot;</span><span className="text-[#3a6080]">:</span> <span className="text-neon">&quot;System Engineer&quot;</span><span className="text-[#3a6080]">,</span><br />
+              &nbsp;&nbsp;<span className="text-[#00e5ff]">&quot;role&quot;</span><span className="text-[#3a6080]">:</span> <span className="text-neon">&quot;Backend Engineer &amp; Project Manager&quot;</span><span className="text-[#3a6080]">,</span><br />
               &nbsp;&nbsp;<span className="text-[#00e5ff]">&quot;stack&quot;</span><span className="text-[#3a6080]">: [</span><br />
               &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#c8dde8]">&quot;Python&quot;</span><span className="text-[#3a6080]">,</span> <span className="text-[#c8dde8]">&quot;Node.js&quot;</span><span className="text-[#3a6080]">,</span><br />
               &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-[#c8dde8]">&quot;Django REST Framework&quot;</span><span className="text-[#3a6080]">,</span> <span className="text-[#c8dde8]">&quot;PostgreSQL&quot;</span><span className="text-[#3a6080]">,</span><br />

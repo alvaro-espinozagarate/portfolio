@@ -1,7 +1,7 @@
 const VALUES = [
   "Clean Architecture", "TDD / BDD",
-  "SOLID Principles", "DevOps mindset",
-  "Domain Driven Design", "Event-driven Systems",
+  "SOLID Principles", "Project Management",
+  "Domain Driven Design", "Agile / Scrum",
 ];
 
 export default function About() {
@@ -59,14 +59,14 @@ export default function About() {
             </h2>
             <div className="space-y-4 font-mono text-sm text-[#3a6080] leading-relaxed mb-8">
               <p>
-                Soy <span className="text-[#c8dde8]">Alvaro Espinoza Garate</span>, Ingeniero de Sistemas especializado en desarrollo Backend con más de 2 años de experiencia diseñando arquitecturas que escalan.
+                Soy <span className="text-[#c8dde8]">Alvaro Espinoza Garate</span>, Ingeniero de Sistemas especializado en desarrollo Backend y gestión de proyectos de software, con más de 2 años de experiencia diseñando arquitecturas que escalan.
               </p>
               <p>
                 Mi enfoque está en construir sistemas que no solo funcionen, sino que sean{" "}
-                <span className="text-[#c8dde8]">seguros, eficientes y mantenibles</span> a largo plazo.
+                <span className="text-[#c8dde8]">seguros, eficientes y mantenibles</span>, liderando cada proyecto desde el diseño técnico hasta la entrega.
               </p>
               <p>
-                He trabajado con equipos en startups de alto crecimiento y empresas corporativas, liderando decisiones técnicas que impactan directamente en la{" "}
+                He trabajado con equipos en startups y empresas corporativas, gestionando proyectos y tomando decisiones técnicas que impactan directamente en la{" "}
                 <span className="text-neon">experiencia del usuario final</span>.
               </p>
             </div>

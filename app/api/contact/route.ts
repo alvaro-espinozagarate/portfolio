@@ -1,10 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+import nodemailer from "nodemailer";
 
 const OWNER_EMAIL = "alvaro.espinozagarate@gmail.com";
 const OWNER_NAME = "Alvaro Espinoza Garate";
+
+// Transportador Gmail — usa App Password, no tu contraseña real.
+// Variables de entorno requeridas:
+//   GMAIL_USER = alvaro.espinozagarate@gmail.com
+//   GMAIL_APP_PASSWORD = xxxx xxxx xxxx xxxx  (generada en myaccount.google.com/apppasswords)
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,8 +30,8 @@ export async function POST(req: NextRequest) {
     }
 
     // ── Email 1: notificación al dueño del portafolio ──────────────────
-    await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+    await transporter.sendMail({
+      from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
       to: OWNER_EMAIL,
       replyTo: email,
       subject: `[Portfolio] ${subject}`,
@@ -111,9 +121,10 @@ export async function POST(req: NextRequest) {
       `,
     });
 
-    // ── Email 2: agradecimiento al visitante ───────────────────────────
-    await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+    // ── Email 2: confirmación al visitante ─────────────────────────────
+    // Enviado desde tu Gmail real → llega a cualquier correo sin restricciones.
+    await transporter.sendMail({
+      from: `"${OWNER_NAME}" <${process.env.GMAIL_USER}>`,
       to: email,
       subject: `¡Gracias por contactarme, ${name}!`,
       html: `
@@ -144,10 +155,10 @@ export async function POST(req: NextRequest) {
                         Hola <strong style="color:#00ff9d;">${name}</strong>,
                       </p>
                       <p style="color:#c8dde8;font-size:14px;line-height:1.7;margin:0 0 20px;">
-                        Gracias por tomarte el tiempo de contactarme. He recibido tu mensaje sobre <strong style="color:#00e5ff;">&quot;${subject}&quot;</strong> y lo revisaré con atención.
+                        Gracias por contactarme. He recibido tu mensaje sobre <strong style="color:#00e5ff;">"${subject}"</strong> y lo revisaré con atención.
                       </p>
                       <p style="color:#c8dde8;font-size:14px;line-height:1.7;margin:0 0 28px;">
-                        Me pondré en contacto contigo a la brevedad posible. Si necesitas respuesta urgente, también puedes escribirme directamente a <a href="mailto:${OWNER_EMAIL}" style="color:#00e5ff;text-decoration:none;">${OWNER_EMAIL}</a>.
+                        Me pondré en contacto contigo a la brevedad. Si necesitas respuesta urgente, puedes escribirme directamente a <a href="mailto:${OWNER_EMAIL}" style="color:#00e5ff;text-decoration:none;">${OWNER_EMAIL}</a>.
                       </p>
 
                       <!-- Resumen del mensaje -->
@@ -159,7 +170,7 @@ export async function POST(req: NextRequest) {
                       <p style="color:#c8dde8;font-size:14px;line-height:1.7;margin:0;">
                         Saludos,<br/>
                         <strong style="color:#00ff9d;">${OWNER_NAME}</strong><br/>
-                        <span style="color:#3a6080;font-size:12px;">System Engineer</span>
+                        <span style="color:#3a6080;font-size:12px;">Backend Engineer & Project Manager</span>
                       </p>
                     </td>
                   </tr>
