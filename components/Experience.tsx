@@ -12,8 +12,8 @@ const EXPERIENCES = [
     company: "Zeia Smart Energy",
     period: "2026 — Presente",
     color: "cyan",
-    desc: "Rediseñé la arquitectura backend a fines de reducir los costos de consumo en el AWS en 70%, así mismo se realizó la mejora de velocidad de respuesta en 85%.",
-    tags: ["Python", "Lambda", "AWS", "RabbitMQ", "PostgreSQL"],
+    desc: "Rediseñé la arquitectura backend basada en AWS Lambda y RabbitMQ, reduciendo los costos de infraestructura en un 70% y mejorando el rendimiento de los endpoints hasta tiempos de respuesta inferiores a 1 segundo.",
+    tags: ["Python", "Lambda", "RabbitMQ", "PostgreSQL", "API Gateway"],
   },
   {
     role: "Practicante en Ing. de Sistemas",
