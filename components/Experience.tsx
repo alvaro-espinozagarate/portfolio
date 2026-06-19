@@ -12,10 +12,9 @@ const EXPERIENCES = [
     company: "Zeia Smart Energy",
     period: "2026 — Presente",
     color: "cyan",
-    desc: "Rediseñé la arquitectura backend basada en AWS Lambda y RabbitMQ, reduciendo los costos de infraestructura en un 70% y mejorando el rendimiento de los endpoints hasta tiempos de respuesta inferiores a 1 segundo.",
+    desc: "Rediseñé la arquitectura backend en AWS, migrando la base de datos de Aurora RDS a una instancia EC2 y reemplazando Amazon MQ por RabbitMQ. Esta optimización redujo los costos de infraestructura en un 80% y mejoró el rendimiento de los endpoints hasta alcanzar tiempos de respuesta inferiores a 1 segundo.",
     tags: ["Python", "Lambda", "RabbitMQ", "PostgreSQL", "API Gateway"],
-  },
-  {
+  },  {
     role: "Practicante en Ing. de Sistemas",
     company: "Universidad Nacional Federico Villarreal",
     period: "2024 — 2025",
